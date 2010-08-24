@@ -13,7 +13,7 @@ table.posts {
     }
     .stat {
       text-align: right;
-      width: 80px;
+      width: 100px;
       p {
         font-size: 14px;
         line-height: 20px;
@@ -51,7 +51,7 @@ table.posts {
   }
 }
 .post {
-  margin: 15px 20px;
+  margin: 15px 0;
   .addthis_toolbox {
     @include float-right;
   }
@@ -80,6 +80,18 @@ table.posts {
     strong {
       font-size: 18px;
       @include inline-block;
+    }
+  }
+  .related_posts {
+    margin-top: 10px;
+    strong {
+      font-size: 18px;
+    }
+    ul {
+      li {
+        margin-left: 10px;
+        line-height: 24px;
+      }
     }
   }
 }
