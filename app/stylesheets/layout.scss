@@ -87,8 +87,7 @@ body {
             padding: 0 5px;
           }
           &.active {
-            color: #a00;
-            background-color: #f00;
+            color: #aaa;
           }
         }
       }
@@ -135,6 +134,7 @@ body {
       @include no-bullets;
       @include horizontal-list;
       @include float-left;
+      margin-left: 20px;
       li a {
         padding: 0 12px;
         line-height: 30px;
