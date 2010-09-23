@@ -10,7 +10,9 @@
     - else
       = link_to 'New Implement', new_post_implementation_path(@post)
 
-%h2= @post.title
+%h2
+  = @post.title
+  = link_to 'Share', new_post_path
 
 %table.post
   %tr
@@ -37,11 +39,14 @@
         %strong tags: 
         - @post.tags.each do |tag|
           = link_to tag.name, tag_path(tag.name)
-      .related_posts
-        %strong related best practices:
-        %ul
-          - @post.related_posts.each do |rp|
-            %li= link_to rp.title, post_path(rp)
+      - if @post.related_posts.present?
+        .related_posts
+          %strong related best practices:
+          %ul
+            - @post.related_posts.each do |rp|
+              %li= link_to rp.title, post_path(rp)
+
+      .adsense= render 'shared/google_adsense'
 
       = render 'comments/comments', :parent => @post
       = render 'shared/login_register'
