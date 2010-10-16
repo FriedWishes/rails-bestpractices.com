@@ -18,3 +18,7 @@ config/authlogic.yml
 *.swp
 dump.rdb
 tmp/cross-stub.cache
+coverage
+db/sphinx
+log/*.pid
+config/*.sphinx.conf

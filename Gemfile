@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.1'
 
 gem 'sqlite3-ruby', :require => 'sqlite3', :group => :development
 gem 'mysql2'
@@ -16,7 +16,7 @@ gem "inherited_resources", "~> 1.1.2"
 gem "exception_notification", :git => "git://github.com/rails/exception_notification.git", :require => "exception_notifier"
 gem "acts-as-taggable-on", "~> 2.0.6"
 gem "rdiscount"
-gem "gravtastic", "~>2.2.0"
+gem "gravtastic", "~> 3.0.0"
 gem "css_sprite", "~> 1.4.9"
 gem "meta-tags", :require => 'meta_tags'
 gem "sitemap_generator", "~> 0.3.3"
@@ -32,22 +32,30 @@ gem "cancan"
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'typus', "~>1.0.0.pre6"
 gem 'whenever'
+gem "thinking-sphinx", "~> 2.0.0.rc2", :require => 'thinking_sphinx'
 
-gem "mongrel", :group => :development
-gem "awesome_print", :require => 'ap', :group => :development
-gem "bullet", "~> 2.0.0.rc1", :group => :development
+group :development do
+  gem "mongrel"
+  gem "awesome_print", :require => 'ap'
+  gem "bullet", "~> 2.0.0.rc2"
+end
 
-gem "autotest-rails", "~> 4.1.0", :group => :test
-gem "rspec", "~> 2.0.0.beta.20", :group => :test
-gem "rspec-rails", "~> 2.0.0.beta.20", :group => :test
-gem "factory_girl_rails", "~> 1.0.0", :group => :test
-gem 'remarkable_activerecord', '~> 4.0.0.alpha2', :group => :test
+group :test do
+  gem "autotest-rails", "~> 4.1.0"
+  gem "rcov", "~> 0.9.9"
+  gem "rspec", "~> 2.0.0"
+  gem "rspec-rails", "~> 2.0.0"
+  gem "factory_girl_rails", "~> 1.0.0"
+  gem 'remarkable_activerecord', '~> 4.0.0.alpha2'
+end
 
-gem "cucumber", "= 0.8.5", :group => :cucumber
-gem "cucumber-rails", "= 0.3.2", :group => :cucumber
-gem "capybara", "= 0.3.9", :group => :cucumber
-gem "database_cleaner", :group => :cucumber
-gem "spork", :group => :cucumber
-gem "launchy", :group => :cucumber
-gem "pickle", "~> 0.4.2", :group => :cucumber
-gem "cross-stub", "= 0.2.0", :group => :cucumber
+group :cucumber do
+  gem "cucumber", "= 0.8.5"
+  gem "cucumber-rails", "= 0.3.2"
+  gem "capybara", "= 0.3.9"
+  gem "database_cleaner"
+  gem "spork"
+  gem "launchy"
+  gem "pickle", "~> 0.4.2"
+  gem "cross-stub", "= 0.2.0"
+end
