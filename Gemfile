@@ -9,7 +9,8 @@ gem "json"
 gem "haml", "~> 3.0.13"
 gem "compass", "~> 0.10.2"
 gem "will_paginate", "~> 3.0.pre2"
-gem "authlogic", "~> 2.1.6"
+#gem "authlogic", "~> 2.1.6"
+gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "formtastic", "~> 1.1.0"
 gem "has_scope", "~> 0.5.0"
 gem "inherited_resources", "~> 1.1.2"
@@ -50,10 +51,10 @@ group :test do
 end
 
 group :cucumber do
-  gem "cucumber", "= 0.8.5"
-  gem "cucumber-rails", "= 0.3.2"
+  gem "cucumber", "~> 0.9.2"
+  gem "cucumber-rails", "~> 0.3.2"
   gem "capybara", "= 0.3.9"
-  gem "database_cleaner"
+  gem "database_cleaner", "~> 0.6.0.rc3"
   gem "spork"
   gem "launchy"
   gem "pickle", "~> 0.4.2"
