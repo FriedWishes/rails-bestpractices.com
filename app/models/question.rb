@@ -7,7 +7,7 @@ class Question < ActiveRecord::Base
 
   acts_as_taggable
 
-  has_many :answers, :dependent => :destroy
+  has_many :answers, :include => :user, :dependent => :destroy
 
   validates_presence_of :title, :body
   validates_uniqueness_of :title
