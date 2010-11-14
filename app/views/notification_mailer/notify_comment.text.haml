@@ -1,0 +1,5 @@
+#{@comment.user_name} comment on #{@comment.parent_name}
+
+= strip_tags(@comment.body)
+
+View Comment: polymorphic_url(@comment.commentable)
