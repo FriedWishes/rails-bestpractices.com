@@ -1,8 +1,9 @@
 Feature: Comment Post with Login
 
   Background:
-    Given a post exists with title: "first best practice"
-    Given I am already signed in as "flyerhzm"
+    Given a user "richard" exists with login: "richard"
+    And a post exists with user: user "richard", title: "first best practice"
+    And I am already signed in as "flyerhzm"
     And I follow "first best practice"
 
   Scenario: Successful comment with valid info

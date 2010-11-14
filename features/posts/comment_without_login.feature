@@ -1,7 +1,8 @@
 Feature: Comment Post without Login
 
   Background:
-    Given a post exists with title: "first best practice"
+    Given a user "richard" exists with login: "richard"
+    And a post exists with user: user "richard", title: "first best practice"
     And I go to the home page
     And I follow "first best practice"
 
