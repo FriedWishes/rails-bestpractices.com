@@ -311,7 +311,7 @@ DEPENDENCIES
   json
   launchy
   meta-tags
-  mysql2
+  mysql2 (~> 0.2.6)
   oauth
   oauth2
   pickle (~> 0.4.2)
