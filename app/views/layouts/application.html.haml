@@ -32,7 +32,7 @@
               = link_to "Leaders", users_path
             %li.last= link_to "About", page_path(:name => 'about-us')
         .pledgie= render 'shared/pledgie'
-        .share
+        %section.share
           = link_to 'SUBSCRIBE TO OUR RSS FEED', "http://feeds.feedburner.com/rails-bestpractices", :class => 'rss-icon'
           = link_to 'FOLLOW US ON TWITTER', "http://twitter.com/railsbp", :class => 'twitter-icon'
       .main-nav
@@ -70,7 +70,7 @@
 
     %footer
       .container
-        .share
+        %section.share
           = link_to 'FOLLOW US ON TWITTER', "http://twitter.com/railsbp", :class => 'twitter-icon'
           = link_to 'SUBSCRIBE TO OUR RSS FEED', "http://feeds.feedburner.com/rails-bestpractices", :class => 'rss-icon'
         %ul
