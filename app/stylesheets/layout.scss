@@ -38,7 +38,7 @@ body {
   width: 980px;
   @include clearfix;
 }
-#header, #footer {
+body > header, #footer {
   .share {
     @include float-right;
     a {
@@ -56,7 +56,7 @@ body {
     }
   }
 }
-#header {
+body > header {
   background: url(/images/header-bg.png) repeat-x 0 0 #fdfdfd;
   .pledgie {
     margin: 20px 0 0 0;
