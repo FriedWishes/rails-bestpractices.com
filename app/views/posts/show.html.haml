@@ -29,7 +29,7 @@
           Posted by
           = link_to @post.user.login, user_path(@post.user)
           on
-          = l(@post.created_at.to_date)
+          %time{:datetime => @post.created_at.to_date, :pubdate => "pubdate"}= l(@post.created_at.to_date)
         .description
           .point-to-icon
           %p= @post.description
