@@ -38,7 +38,7 @@ body {
   width: 980px;
   @include clearfix;
 }
-body > header, #footer {
+body > header, body > footer {
   .share {
     @include float-right;
     a {
@@ -236,7 +236,7 @@ body > header {
     line-height: 80px;
   }
 }
-#footer {
+body > footer {
   background: url(/images/footer-bg.png) repeat-x 0 0 #ededed;
   height: 130px;
   ul {
@@ -252,7 +252,7 @@ body > header {
     }
   }
   .copyright {
-    margin: 20px 0 0 60px;
+    margin: 20px 0 0 53px;
   }
   .share {
     @include float-right;

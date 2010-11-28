@@ -68,7 +68,7 @@
           .static-section
             = render_sidebar_content
 
-    #footer
+    %footer
       .container
         .share
           = link_to 'FOLLOW US ON TWITTER', "http://twitter.com/railsbp", :class => 'twitter-icon'
@@ -78,7 +78,7 @@
           %li= link_to 'Contact Us', page_path('contact-us')
           %li= link_to 'About Us', page_path('about-us')
           %li= link_to 'Advertise', page_path('advertise')
-        .copyright &copy; 2010 rails-bestpractices.com
+        %p.copyright Copyright &copy; 2010 rails-bestpractices.com
 
     = raw javascript_include_merged :base
     - if Rails.env.development?
