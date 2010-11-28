@@ -11,46 +11,47 @@
     - else
       = link_to 'New Implement', new_post_implementation_path(@post)
 
-%h2
-  = @post.title
+%article.post
+  %header
+    %h1= @post.title
 
-%table.post
-  %tr
-    %td.vote-info
-      %div
-        = vote_like_link(@post)
-        %p= @post.vote_points
-        = vote_dislike_link(@post)
-    %td
-      = render 'shared/addthis'
-      %p
-        = image_tag @post.user.gravatar_url(:size => 32, :default => 'mm'), :class => 'user-avatar', :alt => @post.user.login
-        Posted by 
-        = link_to @post.user.login, user_path(@post.user)
-        on 
-        = l(@post.created_at.to_date)
-      .description
-        .point-to-icon
-        %p= @post.description
-      .wikistyle= raw @post.formatted_html
-      - if @post.implemented?
-        = link_to 'implemented', post_implementation_path(@post), :class => 'implemented'
-      .tags
-        %strong tags: 
-        - @post.tags.each do |tag|
-          = link_to tag.name, tag_path(tag.name)
-      - if @post.related_posts.present?
-        .related_posts
-          %strong related best practices:
-          %ul
-            - @post.related_posts.each do |rp|
-              %li= link_to rp.title, post_path(rp)
+  %table
+    %tr
+      %td.vote-info
+        %div
+          = vote_like_link(@post)
+          %p= @post.vote_points
+          = vote_dislike_link(@post)
+      %td
+        = render 'shared/addthis'
+        %p
+          = image_tag @post.user.gravatar_url(:size => 32, :default => 'mm'), :class => 'user-avatar', :alt => @post.user.login
+          Posted by
+          = link_to @post.user.login, user_path(@post.user)
+          on
+          = l(@post.created_at.to_date)
+        .description
+          .point-to-icon
+          %p= @post.description
+        .wikistyle= raw @post.formatted_html
+        - if @post.implemented?
+          = link_to 'implemented', post_implementation_path(@post), :class => 'implemented'
+        .tags
+          %strong tags:
+          - @post.tags.each do |tag|
+            = link_to tag.name, tag_path(tag.name)
+        - if @post.related_posts.present?
+          .related_posts
+            %strong related best practices:
+            %ul
+              - @post.related_posts.each do |rp|
+                %li= link_to rp.title, post_path(rp)
 
-      .adsense= render 'shared/google_adsense'
+        .adsense= render 'shared/google_adsense'
 
-      = render 'comments/comments', :parent => @post
-      = render 'shared/login_register'
-      = render 'comments/comment_form', {:parent => @post, :comment => @comment}
+        = render 'comments/comments', :parent => @post
+        = render 'shared/login_register'
+        = render 'comments/comment_form', {:parent => @post, :comment => @comment}
 
 - content_for :js do
   = javascript_include_tag "http://s7.addthis.com/js/250/addthis_widget.js#username=flyerhzm"

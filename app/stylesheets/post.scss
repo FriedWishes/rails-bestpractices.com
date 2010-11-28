@@ -28,7 +28,7 @@ table.posts {
           font-size: 16px;
           font-weight: bold;
         }
-      }      
+      }
       .description {
         padding: 5px 0;
         color: #727272;
@@ -50,8 +50,17 @@ table.posts {
     }
   }
 }
-.post {
-  margin: 15px 0;
+
+article.post {
+  header {
+    h1 {
+      font: 20px verdana;
+      margin-bottom: 20px;
+    }
+  }
+  table {
+    padding: 15px 0;
+  }
   .addthis_toolbox {
     @include float-right;
   }
