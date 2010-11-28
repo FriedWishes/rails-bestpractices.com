@@ -1,10 +1,14 @@
 !!!
 %html{:lang => 'en'}
   %head
+    %meta{:charset => 'utf8'}
     = raw stylesheet_link_merged :base
     = display_meta_tags :site => 'Rails Best Practices', :description => "rails, ruby on rails, best practices, tips, tricks"
     = auto_discovery_link_tag(:rss, "http://feeds.feedburner.com/rails-bestpractices")
     = csrf_meta_tag
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   %body
     #header
       = switch_user_select
