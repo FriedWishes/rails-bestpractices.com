@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Register successful!"
         redirect_back_or_default root_url
       else
-        render :action => :new
+        render :new
       end
     end
   end
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     else
       params[:nav] = params[:nav] || "posts"
       @children = @user.send(params[:nav])
+      @children = @children.published if params[:nav] == "posts"
     end
   end
 
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Account updated!"
         redirect_to :action => :edit
       else
-        render :action => :edit
+        render :edit
       end
     end
   end
